@@ -20,8 +20,8 @@ export const FEATURES = [
         image: "/images/feature-one.svg",
     },
     {
-        title: "Data Management",
-        description: "Manage your data with ease and efficiency",
+        title: "Price Management",
+        description: "ตั้งราคา Bid Offer ได้ทุกสินค้า",
         icon: DatabaseIcon,
         image: "/images/feature-three.svg",
     },
@@ -32,8 +32,8 @@ export const FEATURES = [
         image: "/images/feature-four.svg",
     },
     {
-        title: "Dynamic Optimization",
-        description: "AI-powered optimization for smarter marketing",
+        title: "Realtimes Transection",
+        description: "อัพเดททุกการซื้อขายเเบบเรียลไทม์",
         icon: ZapIcon,
         image: "/images/feature-five.svg",
     }
