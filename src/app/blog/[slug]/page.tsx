@@ -7,17 +7,19 @@ import Wrapper from "@/components/global/wrapper";
 import { Metadata } from "next";
 import Image from "next/image";
 
-interface BlogPostPageProps {
+// Update the props interface to match Next.js requirements
+interface Props {
     params: {
         slug: string;
     };
+    searchParams: { [key: string]: string | string[] | undefined };
 }
 
 // Force dynamic rendering for blog posts
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const post = await getBlogPost(decodeURIComponent(params.slug));
 
     if (!post) {
@@ -49,7 +51,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: Props) {
     const post = await getBlogPost(decodeURIComponent(params.slug));
 
     if (!post) {
