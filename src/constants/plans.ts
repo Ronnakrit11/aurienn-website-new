@@ -17,7 +17,7 @@ export const PLANS: PLAN[] = [
         desc: "Perfect for solopreneurs and small business looking for let customer  buy sell gold in your website ",
         monthlyPrice: 29,
         annuallyPrice: 59000,
-        buttonText: "Upgrade to Standard",
+        buttonText: "Contact",
         features: [
             "ทอง 99.99% , ทอง 96.5% , ทองสมาคม",
             "2 บัญชีเเอดมิน",
@@ -38,7 +38,7 @@ export const PLANS: PLAN[] = [
         monthlyPrice: 79,
         annuallyPrice: 99000,
         badge: "Most Popular",
-        buttonText: "Upgrade to Mastermind",
+        buttonText: "Contact",
         features: [
             "ทุกอย่างใน Pro",
             "Spot , ทอง 99.99% , ทอง 96.5% , ทองสมาคม ,เงิน",
