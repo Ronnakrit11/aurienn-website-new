@@ -5,10 +5,17 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { NAV_LINKS } from "@/constants";
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const MobileMenu = () => {
+    const [open, setOpen] = useState(false);
+
+    const handleLinkClick = () => {
+        setOpen(false);
+    };
+
     return (
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild className="lg:hidden">
                 <Button variant="ghost" size="icon" className="lg:hidden">
                     <Menu className="h-6 w-6" />
@@ -24,12 +31,13 @@ const MobileMenu = () => {
                             key={index}
                             href={link.href}
                             className="text-base font-medium transition-colors hover:text-primary"
+                            onClick={handleLinkClick}
                         >
                             {link.name}
                         </Link>
                     ))}
                     <div className="pt-4 mt-4 border-t border-border">
-                        <Link href="#" className="w-full">
+                        <Link href="#" className="w-full" onClick={handleLinkClick}>
                             <Button className="w-full" variant="blue">
                                 Get Started
                             </Button>
@@ -38,7 +46,7 @@ const MobileMenu = () => {
                 </nav>
             </SheetContent>
         </Sheet>
-    )
+    );
 };
 
-export default MobileMenu
+export default MobileMenu;
