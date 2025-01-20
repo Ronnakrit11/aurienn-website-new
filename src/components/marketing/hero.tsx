@@ -61,12 +61,12 @@ const Hero = () => {
                             <span className="">
                                 Business {" "}
                             </span>
-                            with Our Solution
+                            With Our Solution
                         </h1>
                     </Container>
                     <Container delay={0.2}>
                         <p className="max-w-xl mx-auto mt-2 text-base lg:text-lg text-center text-muted-foreground">
-                            เปลี่ยนการซื้อขายทอง ออมทองในกระดาษให้เป็นระบบ 24 ชม.
+                            เปลี่ยนการซื้อขายทอง ออมทองในกระดาษให้เป็นระบบอัตโนมัติ 24 ชม.
                         </p>
                     </Container>
                     <Container delay={0.25} className="z-20">
