@@ -18,7 +18,7 @@ const Pricing = () => {
                         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
                             Find the right plan that suits <br className="hidden lg:block" /> <span className="font-subheading italic">your needs</span>
                         </h2>
-                        <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
+                        <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6 font-thai">
                             Transform your marketing with AI-powered automation. Create campaigns faster, generate better content, and make smarter decisions in minutes.
                         </p>
                     </div>
@@ -47,7 +47,7 @@ const Plan = ({ plan }: { plan: PLAN }) => {
             )}
 
             <div className="p-4 md:p-8 flex rounded-t-2xl lg:rounded-t-3xl flex-col items-start w-full relative">
-                <h2 className="font-medium text-xl text-foreground pt-5">
+                <h2 className="font-medium text-xl text-foreground pt-5 font-thai">
                     {plan.title}
                 </h2>
                 <h3 className="mt-3 text-3xl font-medium md:text-5xl">
@@ -64,12 +64,12 @@ const Plan = ({ plan }: { plan: PLAN }) => {
                         }}
                     />
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground mt-2">
+                <p className="text-sm md:text-base text-muted-foreground mt-2 font-thai">
                     {plan.desc}
                 </p>
             </div>
             <div className="flex flex-col items-start w-full px-4 py-2 md:px-8">
-                <Button size="lg" variant={plan.title === "Mastermind" ? "blue" : "white"} className="w-full">
+                <Button size="lg" variant={plan.title === "Mastermind" ? "blue" : "white"} className="w-full font-thai">
                     {plan.buttonText}
                 </Button>
                 <div className="h-8 overflow-hidden w-full mx-auto">
@@ -80,7 +80,7 @@ const Plan = ({ plan }: { plan: PLAN }) => {
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: -20, opacity: 0 }}
                             transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="text-sm text-center text-muted-foreground mt-3 mx-auto block"
+                            className="text-sm text-center text-muted-foreground mt-3 mx-auto block font-thai"
                         >
                             Billed annually
                         </motion.span>
@@ -88,7 +88,7 @@ const Plan = ({ plan }: { plan: PLAN }) => {
                 </div>
             </div>
             <div className="flex flex-col items-start w-full p-5 mb-4 ml-1 gap-y-2">
-                <span className="text-base text-left mb-2">
+                <span className="text-base text-left mb-2 font-thai">
                     Includes: 
                 </span>
                 {plan.features.map((feature, index) => (
@@ -96,7 +96,7 @@ const Plan = ({ plan }: { plan: PLAN }) => {
                         <div className="flex items-center justify-center">
                             <CheckIcon className="size-5" />
                         </div>
-                        <span>{feature}</span>
+                        <span className="font-thai">{feature}</span>
                     </div>
                 ))}
             </div>

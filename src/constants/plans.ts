@@ -19,7 +19,7 @@ export const PLANS: PLAN[] = [
         annuallyPrice: 59000,
         buttonText: "Upgrade to Standard",
         features: [
-            "Spot , ทอง 99.99% , ทอง 96.5% , ทองสมาคม",
+            "ทอง 99.99% , ทอง 96.5% , ทองสมาคม",
             "2 บัญชีเเอดมิน",
             "อัพเดทราคาทองเเบบเรียลไทม์",
             "เเจ้งเตือนเรียลไทม์เมื่อมีคำสั่งซื้อขาย",
@@ -41,12 +41,15 @@ export const PLANS: PLAN[] = [
         buttonText: "Upgrade to Mastermind",
         features: [
             "ทุกอย่างใน Pro",
+            "Spot , ทอง 99.99% , ทอง 96.5% , ทองสมาคม ,เงิน",
             "บัญชีเเอดมินไม่จำกัด",
             "Full Website",
             "อัพเดทฟังก์ชั่นใหม่ในอนาคตฟรี",
             "ฟังก์ชั่นวิเคราะห์เเรงซื้อขายด้วย Ai",
             "Seo ติดหน้าเเรก Google",
-            "Google Analysic"
+            "Google Analysic",
+            "Line oa Richmenu",
+            "Line Liff"
         ],
         link: "#"
     },
