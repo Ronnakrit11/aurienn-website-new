@@ -19,13 +19,15 @@ export const PLANS: PLAN[] = [
         annuallyPrice: 59000,
         buttonText: "Upgrade to Standard",
         features: [
-            "AI content (1,000 words/mo)",
-            "3 social media channels",
-            "Basic post scheduling",
-            "Content calendar",
-            "Basic analytics dashboard",
-            "2 team members",
-            "Email support"
+            "Spot , ทอง 99.99% , ทอง 96.5% , ทองสมาคม",
+            "2 บัญชีเเอดมิน",
+            "อัพเดทราคาทองเเบบเรียลไทม์",
+            "เเจ้งเตือนเรียลไทม์เมื่อมีคำสั่งซื้อขาย",
+            "สรุปคำสั่งซื้อขาย",
+            "ฟังก์ัชั่นเปิด-ปิด 2FA",
+            "ฟังก์ัชั่นลูกค้าขอรับทอง",
+            "ฟังก์ชั่นออมทอง",
+            "ฟังก์ชั่นเช็คสลิปลอม สลิปซ้ำ"
         ],
         link: "#"
     },
@@ -38,13 +40,13 @@ export const PLANS: PLAN[] = [
         badge: "Most Popular",
         buttonText: "Upgrade to Mastermind",
         features: [
-            "AI content (10,000 words/mo)",
-            "Advanced AI copywriting",
-            "Multi-language content generation",
-            "Custom brand voice training",
-            "Custom workflow automation",
-            "Priority 24/7 support",
-            "Up to 10 team members"
+            "ทุกอย่างใน Pro",
+            "บัญชีเเอดมินไม่จำกัด",
+            "Full Website",
+            "อัพเดทฟังก์ชั่นใหม่ในอนาคตฟรี",
+            "ฟังก์ชั่นวิเคราะห์เเรงซื้อขายด้วย Ai",
+            "Seo ติดหน้าเเรก Google",
+            "Google Analysic"
         ],
         link: "#"
     },
