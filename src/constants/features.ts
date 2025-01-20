@@ -14,8 +14,8 @@ export const FEATURES = [
         image: "/images/feature-two.svg",
     },
     {
-        title: "Comprehensive Insights",
-        description: "Gain deep insights into your audience and campaign performance",
+        title: "Analytic Price Chart",
+        description: "ดูกราฟได้เเบบเรียลไทม์ด้วย Indicator ครบครัน",
         icon: ChartColumnBigIcon,
         image: "/images/feature-one.svg",
     },
