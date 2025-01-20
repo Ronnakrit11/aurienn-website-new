@@ -1,6 +1,6 @@
 import { NAV_LINKS } from "@/constants";
+import Image from "next/image";
 import Link from "next/link";
-import Icons from "../global/icons";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import MobileMenu from "./mobile-menu";
@@ -12,9 +12,15 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-full">
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center gap-2">
-                            <Icons.icon className="w-6" />
-                            <span className="text-xl font-semibold hidden lg:block">
-                                Vetra
+                            <Image 
+                                src="/icons/au.png" 
+                                alt="Logo" 
+                                width={43} 
+                                height={43}
+                                className="w-[43px] h-[43px]"
+                            />
+                            <span className="text-l font-semibold hidden lg:block">
+                                Aurienn
                             </span>
                         </Link>
                     </div>
@@ -45,4 +51,4 @@ const Navbar = () => {
     )
 };
 
-export default Navbar
+export default Navbar;

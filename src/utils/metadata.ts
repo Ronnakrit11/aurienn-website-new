@@ -16,17 +16,17 @@ interface MetadataProps {
 }
 
 export const generateMetadata = ({
-    title = `Vetra - AI-Powered Project Management & Team Collaboration`,
-    description = `Vetra is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
+    title = `Aurienn - AI-Powered Project Management & Team Collaboration`,
+    description = `icon is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
     icons = [
         {
             rel: "icon",
-            url: "/icons/icon-dark.png",
+            url: "/icons/Ar-logo.png",
             media: "(prefers-color-scheme: light)",
         },
         {
             rel: "icon",
-            url: "/icons/icon.png",
+            url: "/icons/Ar-logo.png",
             media: "(prefers-color-scheme: dark)",
         },
     ],
@@ -46,7 +46,7 @@ export const generateMetadata = ({
     author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
     type = "website",
 }: MetadataProps = {}): Metadata => {
-    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://vertra-ai.vercel.app");
+    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://www.aurienn.com");
 
     return {
         metadataBase,

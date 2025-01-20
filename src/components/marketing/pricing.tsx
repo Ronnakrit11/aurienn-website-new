@@ -6,23 +6,12 @@ import { cn } from "@/lib";
 import NumberFlow from "@number-flow/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckIcon } from "lucide-react";
-import { useState } from "react";
 import Container from "../global/container";
 import { Button } from "../ui/button";
 
-type Plan = "monthly" | "annually";
-
 const Pricing = () => {
-
-    const [billPlan, setBillPlan] = useState<Plan>("monthly");
-
-    const handleSwitch = () => {
-        setBillPlan((prev) => (prev === "monthly" ? "annually" : "monthly"));
-    };
-
     return (
-        <div className="relative flex flex-col items-center justify-center max-w-5xl py-20 mx-auto">
-
+        <div id="pricing" className="relative flex flex-col items-center justify-center max-w-5xl py-20 mx-auto">
             <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
                 <Container>
                     <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
@@ -34,28 +23,12 @@ const Pricing = () => {
                         </p>
                     </div>
                 </Container>
-
-                <Container delay={0.2}>
-                    <div className="flex items-center justify-center space-x-4 mt-6">
-                        <span className="text-base font-medium">Monthly</span>
-                        <button onClick={handleSwitch} className="relative rounded-full focus:outline-none">
-                            <div className="w-12 h-6 transition rounded-full shadow-md outline-none bg-blue-500"></div>
-                            <div
-                                className={cn(
-                                    "absolute inline-flex items-center justify-center w-4 h-4 transition-all duration-500 ease-in-out top-1 left-1 rounded-full bg-white",
-                                    billPlan === "annually" ? "translate-x-6" : "translate-x-0"
-                                )}
-                            />
-                        </button>
-                        <span className="text-base font-medium">Annually</span>
-                    </div>
-                </Container>
             </div>
 
             <div className="grid w-full grid-cols-1 lg:grid-cols-2 pt-8 lg:pt-12 gap-4 lg:gap-6 max-w-4xl mx-auto">
                 {PLANS.map((plan, idx) => (
                     <Container key={idx} delay={0.1 * idx + 0.2}>
-                        <Plan key={plan.id} plan={plan} billPlan={billPlan} />
+                        <Plan key={plan.id} plan={plan} />
                     </Container>
                 ))}
             </div>
@@ -63,7 +36,7 @@ const Pricing = () => {
     );
 };
 
-const Plan = ({ plan, billPlan }: { plan: PLAN, billPlan: Plan }) => {
+const Plan = ({ plan }: { plan: PLAN }) => {
     return (
         <div className={cn(
             "flex flex-col relative rounded-2xl lg:rounded-3xl transition-all bg-background/ items-start w-full border border-foreground/10 overflow-hidden",
@@ -79,8 +52,8 @@ const Plan = ({ plan, billPlan }: { plan: PLAN, billPlan: Plan }) => {
                 </h2>
                 <h3 className="mt-3 text-3xl font-medium md:text-5xl">
                     <NumberFlow
-                        value={billPlan === "monthly" ? plan.monthlyPrice : plan.annuallyPrice}
-                        suffix={billPlan === "monthly" ? "/mo" : "/yr"}
+                        value={plan.annuallyPrice}
+                        suffix="/yr"
                         format={{
                             currency: "USD",
                             style: "currency",
@@ -102,18 +75,14 @@ const Plan = ({ plan, billPlan }: { plan: PLAN, billPlan: Plan }) => {
                 <div className="h-8 overflow-hidden w-full mx-auto">
                     <AnimatePresence mode="wait">
                         <motion.span
-                            key={billPlan}
+                            key="annual"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: -20, opacity: 0 }}
                             transition={{ duration: 0.2, ease: "easeOut" }}
                             className="text-sm text-center text-muted-foreground mt-3 mx-auto block"
                         >
-                            {billPlan === "monthly" ? (
-                                "Billed monthly"
-                            ) : (
-                                "Billed in one annual payment"
-                            )}
+                            Billed annually
                         </motion.span>
                     </AnimatePresence>
                 </div>

@@ -1,5 +1,6 @@
 import Wrapper from "@/components/global/wrapper";
 import Analysis from "@/components/marketing/analysis";
+import Blog from "@/components/marketing/blog";
 import Companies from "@/components/marketing/companies";
 import CTA from "@/components/marketing/cta";
 import Features from "@/components/marketing/features";
@@ -17,6 +18,7 @@ const HomePage = () => {
             <Analysis />
             <Integration />
             <Pricing />
+            <Blog />
             <LanguageSupport />
             <CTA />
         </Wrapper>

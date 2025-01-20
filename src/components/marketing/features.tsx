@@ -6,10 +6,10 @@ import { MagicCard } from "../ui/magic-card";
 
 const Features = () => {
     return (
-        <div className="relative flex flex-col items-center justify-center w-full py-20">
+        <div id="features" className="relative flex flex-col items-center justify-center w-full py-20">
             <Container>
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug">
                         AI-Powered marketing <br /> made <span className="font-subheading italic">simple</span>
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
@@ -19,7 +19,6 @@ const Features = () => {
             </Container>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 relative overflow-visible">
-
                 {FEATURES.map((feature, index) => (
                     <Container key={feature.title} delay={0.1 + index * 0.1} className={cn(
                         "relative flex flex-col rounded-2xl lg:rounded-3xl bg-card border border-border/50 hover:border-border/100 transition-colors",
@@ -59,4 +58,4 @@ const Features = () => {
     )
 };
 
-export default Features
+export default Features;
