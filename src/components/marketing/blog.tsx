@@ -2,42 +2,35 @@
 
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Container from "../global/container";
 import { Button } from "../ui/button";
 import { MagicCard } from "../ui/magic-card";
-
-const BLOG_POSTS = [
-    {
-        title: "AI-Driven Marketing Strategies for 2024",
-        description: "Learn how AI is transforming digital marketing and how to leverage it for your business growth.",
-        image: "/images/feature-one.svg",
-        date: "Feb 15, 2024",
-        readTime: "5 min read",
-        category: "Marketing",
-        slug: "ai-driven-marketing-strategies-2024"
-    },
-    {
-        title: "Maximizing ROI with Automated Campaigns",
-        description: "Discover how automated marketing campaigns can improve your ROI and save valuable time.",
-        image: "/images/feature-two.svg",
-        date: "Feb 12, 2024",
-        readTime: "4 min read",
-        category: "Automation",
-        slug: "maximizing-roi-automated-campaigns"
-    },
-    {
-        title: "The Future of Content Creation",
-        description: "Explore how AI is revolutionizing content creation and what it means for marketers.",
-        image: "/images/feature-three.svg",
-        date: "Feb 10, 2024",
-        readTime: "6 min read",
-        category: "Content",
-        slug: "future-of-content-creation"
-    }
-];
+import { useEffect, useState } from "react";
+import { BlogPost } from "@/lib/blog";
 
 const Blog = () => {
+    const [posts, setPosts] = useState<BlogPost[]>([]);
+    const router = useRouter();
+
+    useEffect(() => {
+        async function fetchPosts() {
+            try {
+                const response = await fetch('/api/blog/featured');
+                const data = await response.json();
+                setPosts(data.posts);
+            } catch (error) {
+                console.error('Error fetching blog posts:', error);
+            }
+        }
+
+        fetchPosts();
+    }, []);
+
+    const handlePostClick = (slug: string) => {
+        router.push(`/blog/${encodeURIComponent(slug)}`);
+    };
+
     return (
         <div id="blog" className="relative flex flex-col items-center justify-center w-full py-20">
             <Container>
@@ -52,9 +45,12 @@ const Blog = () => {
             </Container>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative w-full max-w-6xl mx-auto px-4">
-                {BLOG_POSTS.map((post, index) => (
-                    <Container key={post.title} delay={0.1 + index * 0.1}>
-                        <Link href={`/blog/${post.slug}`} className="block group">
+                {posts.map((post, index) => (
+                    <Container key={post.slug} delay={0.1 + index * 0.1}>
+                        <button 
+                            onClick={() => handlePostClick(post.slug)}
+                            className="block w-full text-left group"
+                        >
                             <MagicCard
                                 gradientFrom="#38bdf8"
                                 gradientTo="#3b82f6"
@@ -72,7 +68,7 @@ const Blog = () => {
                                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                                     <span>{post.date}</span>
                                     <span>•</span>
-                                    <span>{post.readTime}</span>
+                                    <span>{post.readingTime} min read</span>
                                 </div>
                                 <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-500 mb-3">
                                     {post.category}
@@ -84,18 +80,20 @@ const Blog = () => {
                                     {post.description}
                                 </p>
                             </MagicCard>
-                        </Link>
+                        </button>
                     </Container>
                 ))}
             </div>
 
             <Container delay={0.4}>
-                <Link href="/blog" className="inline-block mt-12">
-                    <Button size="lg" className="group">
-                        View all posts
-                        <ArrowRightIcon className="size-4 group-hover:translate-x-1 transition-transform duration-200" />
-                    </Button>
-                </Link>
+                <Button 
+                    onClick={() => router.push('/blog')}
+                    size="lg" 
+                    className="group mt-12"
+                >
+                    View all posts
+                    <ArrowRightIcon className="size-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </Button>
             </Container>
         </div>
     );
