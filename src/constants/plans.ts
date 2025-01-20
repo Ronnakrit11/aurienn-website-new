@@ -14,7 +14,7 @@ export const PLANS: PLAN[] = [
     {
         id: "standard",
         title: "Standard",
-        desc: "Perfect for solopreneurs and small teams looking to automate their content creation and social media with AI tools.",
+        desc: "Perfect for solopreneurs and small business looking for let customer  buy sell gold in your website ",
         monthlyPrice: 29,
         annuallyPrice: 59000,
         buttonText: "Upgrade to Standard",
@@ -34,7 +34,7 @@ export const PLANS: PLAN[] = [
     {
         id: "mastermind",
         title: "Mastermind",
-        desc: "Ideal for growing businesses and agencies who need advanced AI capabilities and automation to scale their marketing.",
+        desc: "Ideal for growing businesses and agencies who need advanced Functional and full service for your business.",
         monthlyPrice: 79,
         annuallyPrice: 99000,
         badge: "Most Popular",
