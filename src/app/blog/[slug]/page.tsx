@@ -7,20 +7,21 @@ import Wrapper from "@/components/global/wrapper";
 import { Metadata } from "next";
 import Image from "next/image";
 
-// Update the props interface to match Next.js requirements
-interface Props {
-    params: {
+type PageProps = {
+    params: Promise<{
         slug: string;
-    };
-    searchParams: { [key: string]: string | string[] | undefined };
-}
+    }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
 // Force dynamic rendering for blog posts
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const post = await getBlogPost(decodeURIComponent(params.slug));
+export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
+    const resolvedParams = await params;
+    const resolvedSearchParams = await searchParams;
+    const post = await getBlogPost(decodeURIComponent(resolvedParams.slug));
 
     if (!post) {
         return {
@@ -50,14 +51,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
     };
 }
-
-export default async function BlogPostPage({ params }: Props) {
-    const post = await getBlogPost(decodeURIComponent(params.slug));
+export default async function BlogPostPage({ params, searchParams }: PageProps) {
+    const resolvedParams = await params;
+    const resolvedSearchParams = await searchParams;
+    const post = await getBlogPost(decodeURIComponent(resolvedParams.slug));
 
     if (!post) {
         notFound();
     }
-
     return (
         <Wrapper>
             <Container className="py-20">
