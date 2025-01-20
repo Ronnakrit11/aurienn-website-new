@@ -33,6 +33,10 @@ function decodeSlug(slug: string): string {
     }
 }
 
+function sanitizeSlug(slug: string): string {
+    return slug.replace(/\.md$/, "").toLowerCase();
+}
+
 export async function getBlogPosts(): Promise<BlogPost[]> {
     ensureDirectoryExists();
 
@@ -41,7 +45,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
         const posts = fileNames
             .filter((fileName) => fileName.endsWith(".md"))
             .map((fileName) => {
-                const slug = fileName.replace(/\.md$/, "");
+                const slug = sanitizeSlug(fileName);
                 const fullPath = path.join(postsDirectory, fileName);
                 const fileContents = fs.readFileSync(fullPath, "utf8");
                 const { data, content } = matter(fileContents);
@@ -75,15 +79,24 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     ensureDirectoryExists();
 
     try {
-        // Decode the URL-encoded slug
-        const decodedSlug = decodeSlug(slug);
-        const fullPath = path.join(postsDirectory, `${decodedSlug}.md`);
+        // Decode and sanitize the slug
+        const decodedSlug = sanitizeSlug(decodeSlug(slug));
         
-        if (!fs.existsSync(fullPath)) {
+        // Get all markdown files
+        const files = fs.readdirSync(postsDirectory);
+        
+        // Find the file that matches the slug (case-insensitive)
+        const fileName = files.find(file => 
+            sanitizeSlug(file) === decodedSlug || 
+            sanitizeSlug(file) === decodedSlug + '.md'
+        );
+
+        if (!fileName) {
             console.error(`Blog post not found: ${decodedSlug}`);
             return null;
         }
 
+        const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const { data, content } = matter(fileContents);
 

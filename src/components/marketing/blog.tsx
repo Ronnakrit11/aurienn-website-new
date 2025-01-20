@@ -11,16 +11,26 @@ import { BlogPost } from "@/lib/blog";
 
 const Blog = () => {
     const [posts, setPosts] = useState<BlogPost[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
 
     useEffect(() => {
         async function fetchPosts() {
             try {
-                const response = await fetch('/api/blog/featured');
+                setIsLoading(true);
+                const response = await fetch('/api/blog/featured', {
+                    method: 'GET',
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to fetch posts');
                 const data = await response.json();
                 setPosts(data.posts);
             } catch (error) {
                 console.error('Error fetching blog posts:', error);
+            } finally {
+                setIsLoading(false);
             }
         }
 
@@ -28,7 +38,8 @@ const Blog = () => {
     }, []);
 
     const handlePostClick = (slug: string) => {
-        router.push(`/blog/${encodeURIComponent(slug)}`);
+        // Use replace instead of push to avoid stacking history entries
+        router.replace(`/blog/${encodeURIComponent(slug)}`);
     };
 
     return (
@@ -45,44 +56,59 @@ const Blog = () => {
             </Container>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative w-full max-w-6xl mx-auto px-4">
-                {posts.map((post, index) => (
-                    <Container key={post.slug} delay={0.1 + index * 0.1}>
-                        <button 
-                            onClick={() => handlePostClick(post.slug)}
-                            className="block w-full text-left group"
-                        >
-                            <MagicCard
-                                gradientFrom="#38bdf8"
-                                gradientTo="#3b82f6"
-                                className="p-4 lg:p-6 w-full overflow-hidden"
-                                gradientColor="rgba(59,130,246,0.1)"
+                {isLoading ? (
+                    // Loading skeleton
+                    Array.from({ length: 3 }).map((_, index) => (
+                        <Container key={index} delay={0.1 + index * 0.1}>
+                            <div className="animate-pulse">
+                                <div className="bg-muted rounded-lg aspect-[16/9] mb-4"></div>
+                                <div className="h-4 bg-muted rounded w-1/4 mb-2"></div>
+                                <div className="h-6 bg-muted rounded w-3/4 mb-4"></div>
+                                <div className="h-4 bg-muted rounded w-full mb-2"></div>
+                                <div className="h-4 bg-muted rounded w-2/3"></div>
+                            </div>
+                        </Container>
+                    ))
+                ) : (
+                    posts.map((post, index) => (
+                        <Container key={post.slug} delay={0.1 + index * 0.1}>
+                            <button 
+                                onClick={() => handlePostClick(post.slug)}
+                                className="block w-full text-left group"
                             >
-                                <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-4">
-                                    <Image
-                                        src={post.image}
-                                        alt={post.title}
-                                        fill
-                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                    />
-                                </div>
-                                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                                    <span>{post.date}</span>
-                                    <span>•</span>
-                                    <span>{post.readingTime} min read</span>
-                                </div>
-                                <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-500 mb-3">
-                                    {post.category}
-                                </span>
-                                <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-500 transition-colors">
-                                    {post.title}
-                                </h3>
-                                <p className="text-muted-foreground text-sm">
-                                    {post.description}
-                                </p>
-                            </MagicCard>
-                        </button>
-                    </Container>
-                ))}
+                                <MagicCard
+                                    gradientFrom="#38bdf8"
+                                    gradientTo="#3b82f6"
+                                    className="p-4 lg:p-6 w-full overflow-hidden"
+                                    gradientColor="rgba(59,130,246,0.1)"
+                                >
+                                    <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-4">
+                                        <Image
+                                            src={post.image}
+                                            alt={post.title}
+                                            fill
+                                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                                        <span>{post.date}</span>
+                                        <span>•</span>
+                                        <span>{post.readingTime} min read</span>
+                                    </div>
+                                    <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-500 mb-3">
+                                        {post.category}
+                                    </span>
+                                    <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-500 transition-colors">
+                                        {post.title}
+                                    </h3>
+                                    <p className="text-muted-foreground text-sm">
+                                        {post.description}
+                                    </p>
+                                </MagicCard>
+                            </button>
+                        </Container>
+                    ))
+                )}
             </div>
 
             <Container delay={0.4}>

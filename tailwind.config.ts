@@ -61,50 +61,6 @@ export default {
                     ring: 'hsl(var(--sidebar-ring))'
                 }
             },
-            typography: {
-                DEFAULT: {
-                    css: {
-                        color: 'hsl(var(--foreground))',
-                        a: {
-                            color: 'hsl(var(--primary))',
-                            '&:hover': {
-                                color: 'hsl(var(--primary))',
-                            },
-                        },
-                        h1: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                        h2: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                        h3: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                        h4: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                        p: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                        li: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                        blockquote: {
-                            color: 'hsl(var(--foreground))',
-                            borderLeftColor: 'hsl(var(--primary))',
-                        },
-                        code: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                        pre: {
-                            backgroundColor: 'hsl(var(--muted))',
-                        },
-                        strong: {
-                            color: 'hsl(var(--foreground))',
-                        },
-                    },
-                },
-            },
             borderRadius: {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
@@ -112,20 +68,12 @@ export default {
             },
             keyframes: {
                 'accordion-down': {
-                    from: {
-                        height: '0'
-                    },
-                    to: {
-                        height: 'var(--radix-accordion-content-height)'
-                    }
+                    from: { height: '0' },
+                    to: { height: 'var(--radix-accordion-content-height)' }
                 },
                 'accordion-up': {
-                    from: {
-                        height: 'var(--radix-accordion-content-height)'
-                    },
-                    to: {
-                        height: '0'
-                    }
+                    from: { height: 'var(--radix-accordion-content-height)' },
+                    to: { height: '0' }
                 },
                 "loading": {
                     "to": {
@@ -176,15 +124,15 @@ export default {
                 },
                 "image-glow": {
                     "0%": {
-                        "opacity": "0",
+                        opacity: "0",
                         "animation-timing-function": "cubic-bezier(.74, .25, .76, 1)",
                     },
                     "10%": {
-                        "opacity": "0.5",
+                        opacity: "0.5",
                         "animation-timing-function": "cubic-bezier(.12, .01, .08, .99)",
                     },
                     "100%": {
-                        "opacity": "1",
+                        opacity: "1",
                     },
                 },
             },
@@ -207,8 +155,61 @@ export default {
                 subheading: ['var(--font-subheading)'],
                 base: ['var(--font-base)'],
                 thai: ['IBM Plex Sans Thai', 'sans-serif'],
+                prompt: ['var(--font-prompt)'],
             },
-        }
+            typography: {
+                DEFAULT: {
+                    css: {
+                        color: 'hsl(var(--foreground))',
+                        a: {
+                            color: 'hsl(var(--primary))',
+                            '&:hover': {
+                                color: 'hsl(var(--primary))',
+                            },
+                        },
+                        h1: {
+                            color: 'hsl(var(--foreground))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                        h2: {
+                            color: 'hsl(var(--foreground))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                        h3: {
+                            color: 'hsl(var(--foreground))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                        h4: {
+                            color: 'hsl(var(--foreground))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                        p: {
+                            color: 'hsl(var(--foreground))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                        li: {
+                            color: 'hsl(var(--foreground))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                        blockquote: {
+                            color: 'hsl(var(--foreground))',
+                            borderLeftColor: 'hsl(var(--primary))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                        code: {
+                            color: 'hsl(var(--foreground))',
+                        },
+                        pre: {
+                            backgroundColor: 'hsl(var(--muted))',
+                        },
+                        strong: {
+                            color: 'hsl(var(--foreground))',
+                            fontFamily: 'var(--font-prompt)',
+                        },
+                    },
+                },
+            },
+        },
     },
     plugins: [
         require("tailwindcss-animate"),

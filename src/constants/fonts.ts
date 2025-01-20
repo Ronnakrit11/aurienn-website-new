@@ -1,4 +1,4 @@
-import { Inter, DM_Sans, Instrument_Serif, IBM_Plex_Sans_Thai } from "next/font/google";
+import { Inter, DM_Sans, Instrument_Serif, IBM_Plex_Sans_Thai, Prompt } from "next/font/google";
 import localFont from "next/font/local";
 
 export const heading = localFont({
@@ -47,4 +47,10 @@ export const thai = IBM_Plex_Sans_Thai({
     weight: ['400'],
     subsets: ['thai'],
     variable: '--font-thai',
+});
+
+export const prompt = Prompt({
+    weight: ['400', '500', '600', '700'],
+    subsets: ['thai', 'latin'],
+    variable: '--font-prompt',
 });
