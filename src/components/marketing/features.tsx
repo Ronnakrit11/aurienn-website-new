@@ -10,7 +10,7 @@ const Features = () => {
             <Container>
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug">
-                        AI-Powered marketing <br /> made <span className="font-subheading italic">simple</span>
+                        ให้การซื้อขายทอง ออมทอง <br /> เป็น <span className="font-subheading italic">เรื่องง่าย</span>
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
                         Transform your marketing with AI-powered automation. Create campaigns faster, generate better content, and make smarter decisions in minutes.
