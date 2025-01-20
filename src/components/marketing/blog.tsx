@@ -15,7 +15,7 @@ const BLOG_POSTS = [
         date: "Feb 15, 2024",
         readTime: "5 min read",
         category: "Marketing",
-        href: "#"
+        slug: "ai-driven-marketing-strategies-2024"
     },
     {
         title: "Maximizing ROI with Automated Campaigns",
@@ -24,7 +24,7 @@ const BLOG_POSTS = [
         date: "Feb 12, 2024",
         readTime: "4 min read",
         category: "Automation",
-        href: "#"
+        slug: "maximizing-roi-automated-campaigns"
     },
     {
         title: "The Future of Content Creation",
@@ -33,7 +33,7 @@ const BLOG_POSTS = [
         date: "Feb 10, 2024",
         readTime: "6 min read",
         category: "Content",
-        href: "#"
+        slug: "future-of-content-creation"
     }
 ];
 
@@ -54,7 +54,7 @@ const Blog = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative w-full max-w-6xl mx-auto px-4">
                 {BLOG_POSTS.map((post, index) => (
                     <Container key={post.title} delay={0.1 + index * 0.1}>
-                        <Link href={post.href} className="block group">
+                        <Link href={`/blog/${post.slug}`} className="block group">
                             <MagicCard
                                 gradientFrom="#38bdf8"
                                 gradientTo="#3b82f6"
@@ -90,7 +90,7 @@ const Blog = () => {
             </div>
 
             <Container delay={0.4}>
-                <Link href="#" className="inline-block mt-12">
+                <Link href="/blog" className="inline-block mt-12">
                     <Button size="lg" className="group">
                         View all posts
                         <ArrowRightIcon className="size-4 group-hover:translate-x-1 transition-transform duration-200" />

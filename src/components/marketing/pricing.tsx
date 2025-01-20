@@ -55,7 +55,7 @@ const Plan = ({ plan }: { plan: PLAN }) => {
                         value={plan.annuallyPrice}
                         suffix="/yr"
                         format={{
-                            currency: "USD",
+                            currency: "THB",
                             style: "currency",
                             currencySign: "standard",
                             minimumFractionDigits: 0,

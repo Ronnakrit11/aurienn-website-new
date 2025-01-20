@@ -9,11 +9,12 @@ const Features = () => {
         <div id="features" className="relative flex flex-col items-center justify-center w-full py-20">
             <Container>
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug">
-                        ให้การซื้อขายทอง ออมทอง <br /> เป็น <span className="font-subheading italic">เรื่องง่าย</span>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium !leading-snug">
+                        <span className="font-thai">ให้การซื้อขายทอง ออมทอง</span> <br /> 
+                        <span className="font-thai">เป็น</span> <span className="font-subheading italic">เรื่องง่าย</span>
                     </h2>
-                    <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        Transform your marketing with AI-powered automation. Create campaigns faster, generate better content, and make smarter decisions in minutes.
+                    <p className="font-thai text-base md:text-lg text-center text-accent-foreground/80 mt-6">
+                        ฟังก์ชั่นการใช้งานครบครัน. ตอบโจทย์ลูกค้ายุคดิจิทัล, สร้างความน่าเชื่อถือให้ลูกค้า, ปลอดภัยทุกธุรกรรม.
                     </p>
                 </div>
             </Container>

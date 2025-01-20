@@ -16,7 +16,7 @@ export const PLANS: PLAN[] = [
         title: "Standard",
         desc: "Perfect for solopreneurs and small teams looking to automate their content creation and social media with AI tools.",
         monthlyPrice: 29,
-        annuallyPrice: 306,
+        annuallyPrice: 59000,
         buttonText: "Upgrade to Standard",
         features: [
             "AI content (1,000 words/mo)",
@@ -34,7 +34,7 @@ export const PLANS: PLAN[] = [
         title: "Mastermind",
         desc: "Ideal for growing businesses and agencies who need advanced AI capabilities and automation to scale their marketing.",
         monthlyPrice: 79,
-        annuallyPrice: 834,
+        annuallyPrice: 99000,
         badge: "Most Popular",
         buttonText: "Upgrade to Mastermind",
         features: [
