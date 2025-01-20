@@ -162,6 +162,7 @@ export default {
 				heading: ['var(--font-heading)'],
 				subheading: ['var(--font-subheading)'],
 				base: ['var(--font-base)'],
+                thai: ['IBM Plex Sans Thai', 'sans-serif'],
 			},
 		}
 	},

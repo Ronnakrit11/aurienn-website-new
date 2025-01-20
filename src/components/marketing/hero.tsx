@@ -61,11 +61,11 @@ const Hero = () => {
                             <span className="">
                                 Business {" "}
                             </span>
-                            With Our Solution
+                            With Aurienn
                         </h1>
                     </Container>
                     <Container delay={0.2}>
-                        <p className="max-w-xl mx-auto mt-2 text-base lg:text-lg text-center text-muted-foreground">
+                        <p className="max-w-xl mx-auto mt-2 text-base lg:text-lg text-center text-muted-foreground font-thai">
                             เปลี่ยนการซื้อขายทอง ออมทองในกระดาษให้เป็นระบบอัตโนมัติ 24 ชม.
                         </p>
                     </Container>
@@ -104,4 +104,4 @@ const Hero = () => {
     )
 };
 
-export default Hero
+export default Hero;

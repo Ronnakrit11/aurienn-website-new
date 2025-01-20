@@ -1,4 +1,4 @@
-import { Inter, DM_Sans, Instrument_Serif } from "next/font/google";
+import { Inter, DM_Sans, Instrument_Serif, IBM_Plex_Sans_Thai } from "next/font/google";
 import localFont from "next/font/local";
 
 export const heading = localFont({
@@ -41,4 +41,10 @@ export const subheading = Instrument_Serif({
     subsets: ["latin"],
     weight: ["400"],
     variable: "--font-subheading",
+});
+
+export const thai = IBM_Plex_Sans_Thai({
+    weight: ['400'],
+    subsets: ['thai'],
+    variable: '--font-thai',
 });
