@@ -16,8 +16,8 @@ interface MetadataProps {
 }
 
 export const generateMetadata = ({
-    title = `Aurienn - AI-Powered Project Management & Team Collaboration`,
-    description = `icon is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
+    title = `Aurienn บริการทำระบบซื้อขายทอง ระบบออมทองให้ร้านทองของคุณ`,
+    description = `เปลี่ยนร้านทองของคุณ, ด้วยระบบซื้อขายทอง ระบบออมทอง 24 ชม`,
     icons = [
         {
             rel: "icon",
@@ -32,16 +32,14 @@ export const generateMetadata = ({
     ],
     noIndex = false,
     keywords = [
-        "AI marketing automation",
-        "social media marketing",
-        "content generation",
-        "marketing analytics",
-        "campaign management",
+        "ระบบออมทอง",
+        "ระบบซื้อขายทองออนไลน์",
+        "ระบบออมทองอัตโนมัติ",
+        "ระบบบริหารร้านทอง",
         "multilingual marketing",
-        "AI copywriting",
+        "Gold Trading",
         "marketing workflow",
-        "performance tracking",
-        "digital marketing tools"
+     
     ],
     author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
     type = "website",
