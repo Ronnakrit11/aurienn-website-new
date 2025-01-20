@@ -57,16 +57,16 @@ const Hero = () => {
                     </Container>
                     <Container delay={0.15}>
                         <h1 className="text-4xl md:text-4xl lg:text-7xl font-bold text-center !leading-tight max-w-4xl mx-auto">
-                            ติดปีกธุรกิจคุณ {" "}
+                            Transform your {" "}
                             <span className="">
-                                ไปอีกขั้น{" "}
+                                Business {" "}
                             </span>
-                            ด้วยระบบออมทอง
+                            with Our Solution
                         </h1>
                     </Container>
                     <Container delay={0.2}>
                         <p className="max-w-xl mx-auto mt-2 text-base lg:text-lg text-center text-muted-foreground">
-                            AI-powered automation and insights to maximize your campaigns and grow your brand.
+                            เปลี่ยนการซื้อขายทอง ออมทองในกระดาษให้เป็นระบบ 24 ชม.
                         </p>
                     </Container>
                     <Container delay={0.25} className="z-20">
