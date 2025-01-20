@@ -57,11 +57,11 @@ const Hero = () => {
                     </Container>
                     <Container delay={0.15}>
                         <h1 className="text-4xl md:text-4xl lg:text-7xl font-bold text-center !leading-tight max-w-4xl mx-auto">
-                            Transform your {" "}
+                            ติดปีกธุรกิจคุณ {" "}
                             <span className="">
-                                marketing {" "}
+                                ไปอีกขั้น{" "}
                             </span>
-                            with AI Precision
+                            ด้วยระบบออมทอง
                         </h1>
                     </Container>
                     <Container delay={0.2}>
