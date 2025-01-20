@@ -18,7 +18,7 @@ type BlogPost = {
   };
   
   export default async function sitemap(): Promise<SitemapEntry[]> {
-    const baseUrl = "https://www.Aurienn-9.com";
+    const baseUrl = "https://www.Aurienn.com";
   
     const staticPages: SitemapEntry[] = [
       {

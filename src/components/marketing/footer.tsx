@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Container from "../global/container";
-import Icons from "../global/icons";
+import Image from "next/image";
 
 const Footer = () => {
     return (
@@ -9,13 +9,19 @@ const Footer = () => {
                 <Container>
                     <div className="flex flex-col items-start justify-start md:max-w-[200px]">
                         <div className="flex items-center gap-2">
-                            <Icons.icon className="w-auto h-5" />
+                            <Image 
+                                src="/icons/au.png" 
+                                alt="Aurienn Logo" 
+                                width={20} 
+                                height={20}
+                                className="w-10 h-10"
+                            />
                             <span className="text-base md:text-lg font-medium text-foreground">
                                 Aurienn
                             </span>
                         </div>
                         <p className="text-muted-foreground mt-4 text-sm text-start">
-                            AI-powered platform that transforms your marketing workflow in seconds.
+                            Solution For Your Business
                         </p>
                     </div>
                 </Container>
@@ -133,7 +139,7 @@ const Footer = () => {
             <Container delay={0.5} className="w-full relative mt-12 lg:mt-20">
                 <div className="mt-8 md:flex md:items-center justify-center footer w-full">
                     <p className="text-sm text-muted-foreground mt-8 md:mt-0">
-                        &copy; {new Date().getFullYear()} icon. All rights reserved.
+                        &copy; {new Date().getFullYear()} Aurienn. All rights reserved.
                     </p>
                 </div>
             </Container>
@@ -141,4 +147,4 @@ const Footer = () => {
     )
 };
 
-export default Footer
+export default Footer;

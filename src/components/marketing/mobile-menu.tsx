@@ -37,7 +37,7 @@ const MobileMenu = () => {
                         </Link>
                     ))}
                     <div className="pt-4 mt-4 border-t border-border">
-                        <Link href="#" className="w-full" onClick={handleLinkClick}>
+                        <Link href="https://lin.ee/EO0xuyG" className="w-full" onClick={handleLinkClick}>
                             <Button className="w-full" variant="blue">
                                 Get Started
                             </Button>
