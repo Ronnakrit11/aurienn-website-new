@@ -60,6 +60,7 @@ export const generateMetadata = ({
     type = "website",
 }: MetadataProps = {}): Metadata => {
     const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://www.aurienn.com");
+    const imageUrl = "https://1qiwmugjmx.ufs.sh/f/JJLy8gppTqPnYt6unvQNAxnzvKiHT4fUXPyC8l1t9ZVQSpMr";
 
     // Construct robots directives
     const robotsDirectives = [
@@ -94,7 +95,7 @@ export const generateMetadata = ({
             url: metadataBase,
             images: [
                 {
-                    url: "https://1qiwmugjmx.ufs.sh/f/JJLy8gppTqPnYt6unvQNAxnzvKiHT4fUXPyC8l1t9ZVQSpMr",
+                    url: imageUrl,
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -105,7 +106,7 @@ export const generateMetadata = ({
             card: "summary_large_image",
             title,
             description,
-            images: ["https://1qiwmugjmx.ufs.sh/f/JJLy8gppTqPnYt6unvQNAxnzvKiHT4fUXPyC8l1t9ZVQSpMr"],
+            images: [imageUrl],
         },
         formatDetection: {
             email: false,
