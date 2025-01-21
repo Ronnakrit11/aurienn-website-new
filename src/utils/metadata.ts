@@ -94,7 +94,7 @@ export const generateMetadata = ({
             url: metadataBase,
             images: [
                 {
-                    url: "/images/dashboard_Aurienn.png",
+                    url: "https://1qiwmugjmx.ufs.sh/f/JJLy8gppTqPnYt6unvQNAxnzvKiHT4fUXPyC8l1t9ZVQSpMr",
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -105,7 +105,7 @@ export const generateMetadata = ({
             card: "summary_large_image",
             title,
             description,
-            images: ["/images/dashboard_Aurienn.png"],
+            images: ["https://1qiwmugjmx.ufs.sh/f/JJLy8gppTqPnYt6unvQNAxnzvKiHT4fUXPyC8l1t9ZVQSpMr"],
         },
         formatDetection: {
             email: false,
