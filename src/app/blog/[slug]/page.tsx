@@ -14,7 +14,7 @@ type PageProps = {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-// Force dynamic rendering for blog posts
+// Force dynamic rendering for blog postss
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
