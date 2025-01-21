@@ -21,7 +21,7 @@ const Footer = () => {
                             </span>
                         </div>
                         <p className="text-muted-foreground mt-4 text-sm text-start">
-                            Solution For Your Business
+                            Solution For Your Gold Store 
                         </p>
                         <div className="mt-4 flex flex-col gap-1">
                             <p className="text-sm text-muted-foreground whitespace-nowrap">
