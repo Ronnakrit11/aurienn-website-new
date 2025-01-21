@@ -5,6 +5,14 @@ interface MetadataProps {
     description?: string;
     icons?: Metadata["icons"];
     noIndex?: boolean;
+    noFollow?: boolean;
+    noArchive?: boolean;
+    noSnippet?: boolean;
+    maxSnippet?: number;
+    maxImagePreview?: 'none' | 'standard' | 'large';
+    maxVideoPreview?: number;
+    noTranslate?: boolean;
+    noImageIndex?: boolean;
     keywords?: string[];
     author?: string;
     twitterHandle?: string;
@@ -17,7 +25,7 @@ interface MetadataProps {
 
 export const generateMetadata = ({
     title = `Aurienn บริการทำระบบซื้อขายทอง ระบบออมทองให้ร้านทองของคุณ`,
-    description = `เปลี่ยนร้านทองของคุณ, ด้วยระบบซื้อขายทอง ระบบออมทอง 24 ชม`,
+    description = `เปลี่ยนร้านทองของคุณให้ทันสมัยด้วยระบบซื้อขายและออมทองออนไลน์ที่ครบวงจร ใช้งานง่าย ปลอดภัย รองรับการทำงานตลอด 24 ชั่วโมง`,
     icons = [
         {
             rel: "icon",
@@ -31,6 +39,14 @@ export const generateMetadata = ({
         },
     ],
     noIndex = false,
+    noFollow = false,
+    noArchive = false,
+    noSnippet = false,
+    maxSnippet,
+    maxImagePreview = 'large',
+    maxVideoPreview,
+    noTranslate = false,
+    noImageIndex = false,
     keywords = [
         "ระบบออมทอง",
         "ระบบซื้อขายทองออนไลน์",
@@ -45,6 +61,19 @@ export const generateMetadata = ({
 }: MetadataProps = {}): Metadata => {
     const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://www.aurienn.com");
 
+    // Construct robots directives
+    const robotsDirectives = [
+        noIndex ? 'noindex' : 'index',
+        noFollow ? 'nofollow' : 'follow',
+        noArchive && 'noarchive',
+        noSnippet && 'nosnippet',
+        typeof maxSnippet === 'number' && `max-snippet:${maxSnippet}`,
+        maxImagePreview && `max-image-preview:${maxImagePreview}`,
+        typeof maxVideoPreview === 'number' && `max-video-preview:${maxVideoPreview}`,
+        noTranslate && 'notranslate',
+        noImageIndex && 'noimageindex'
+    ].filter(Boolean).join(', ');
+
     return {
         metadataBase,
         title: {
@@ -56,14 +85,7 @@ export const generateMetadata = ({
         authors: [{ name: author }],
         creator: author,
         publisher: process.env.NEXT_PUBLIC_APP_NAME,
-        robots: {
-            index: !noIndex,
-            follow: !noIndex,
-            googleBot: {
-                index: !noIndex,
-                follow: !noIndex,
-            },
-        },
+        robots: robotsDirectives,
         openGraph: {
             type,
             title,
