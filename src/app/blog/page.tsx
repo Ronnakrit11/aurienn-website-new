@@ -14,6 +14,14 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
     const posts = await getBlogPosts();
 
+    const formatDate = (dateString: string) => {
+        try {
+            return format(new Date(dateString), "MMMM dd, yyyy");
+        } catch (error) {
+            return "Invalid date";
+        }
+    };
+
     return (
         <Container className="py-20">
             <div className="max-w-4xl mx-auto">
@@ -38,7 +46,7 @@ export default async function BlogPage() {
                                 <span>{post.author}</span>
                                 <span>•</span>
                                 <time dateTime={post.date}>
-                                    {format(new Date(post.date), "MMMM dd, yyyy")}
+                                    {formatDate(post.date)}
                                 </time>
                                 <span>•</span>
                                 <span>{post.readingTime} min read</span>

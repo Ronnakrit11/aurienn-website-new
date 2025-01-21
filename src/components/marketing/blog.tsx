@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import { MagicCard } from "../ui/magic-card";
 import { useEffect, useState } from "react";
 import { BlogPost } from "@/lib/blog";
+import { format } from "date-fns";
 
 const Blog = () => {
     const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -38,8 +39,15 @@ const Blog = () => {
     }, []);
 
     const handlePostClick = (slug: string) => {
-        // Use replace instead of push to avoid stacking history entries
         router.replace(`/blog/${encodeURIComponent(slug)}`);
+    };
+
+    const formatDate = (dateString: string) => {
+        try {
+            return format(new Date(dateString), "MMMM dd, yyyy");
+        } catch (error) {
+            return "Invalid date";
+        }
     };
 
     return (
@@ -57,7 +65,6 @@ const Blog = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative w-full max-w-6xl mx-auto px-4">
                 {isLoading ? (
-                    // Loading skeleton
                     Array.from({ length: 3 }).map((_, index) => (
                         <Container key={index} delay={0.1 + index * 0.1}>
                             <div className="animate-pulse">
@@ -91,7 +98,7 @@ const Blog = () => {
                                         />
                                     </div>
                                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                                        <span>{post.date}</span>
+                                        <span>{formatDate(post.date)}</span>
                                         <span>•</span>
                                         <span>{post.readingTime} min read</span>
                                     </div>

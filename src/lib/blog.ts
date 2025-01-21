@@ -37,6 +37,19 @@ function sanitizeSlug(slug: string): string {
     return slug.replace(/\.md$/, "").toLowerCase();
 }
 
+function parseDate(dateString: string): Date {
+    // Try parsing the date string
+    const date = new Date(dateString);
+    
+    // Check if the date is valid
+    if (isNaN(date.getTime())) {
+        // If invalid, return current date as fallback
+        return new Date();
+    }
+    
+    return date;
+}
+
 export async function getBlogPosts(): Promise<BlogPost[]> {
     ensureDirectoryExists();
 
@@ -53,11 +66,15 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
                 const wordCount = content.split(/\s+/g).length;
                 const readingTime = Math.ceil(wordCount / 200);
 
+                // Ensure date is in ISO format
+                const date = parseDate(data.date);
+                const isoDate = date.toISOString();
+
                 return {
                     slug,
                     title: data.title,
                     description: data.description,
-                    date: data.date,
+                    date: isoDate,
                     content,
                     excerpt: data.excerpt || content.slice(0, 200) + "...",
                     category: data.category || "Uncategorized",
@@ -70,7 +87,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
             .sort((a, b) => {
                 const dateA = new Date(a.date).getTime();
                 const dateB = new Date(b.date).getTime();
-                return dateB - dateA;
+                return dateB - dateA; // Sort in descending order (newest first)
             });
 
         return posts;
@@ -108,11 +125,15 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
         const wordCount = content.split(/\s+/g).length;
         const readingTime = Math.ceil(wordCount / 200);
 
+        // Ensure date is in ISO format
+        const date = parseDate(data.date);
+        const isoDate = date.toISOString();
+
         return {
             slug: decodedSlug,
             title: data.title,
             description: data.description,
-            date: data.date,
+            date: isoDate,
             content,
             excerpt: data.excerpt || content.slice(0, 200) + "...",
             category: data.category || "Uncategorized",
