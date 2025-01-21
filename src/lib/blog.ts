@@ -66,9 +66,14 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
                     image: data.image || "/images/default-blog.svg",
                     keywords: data.keywords || [],
                 };
+            })
+            .sort((a, b) => {
+                const dateA = new Date(a.date).getTime();
+                const dateB = new Date(b.date).getTime();
+                return dateB - dateA;
             });
 
-        return posts.sort((a, b) => (new Date(b.date) as any) - (new Date(a.date) as any));
+        return posts;
     } catch (error) {
         console.error("Error reading blog posts:", error);
         return [];
