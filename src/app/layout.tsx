@@ -6,6 +6,10 @@ import { Toaster } from "@/components/ui/sonner";
 import { subheading } from "@/constants/fonts";
 
 export const metadata = generateMetadata();
+({
+    noIndex: true,
+    noFollow: true
+  });
 
 export default function RootLayout({
     children,
