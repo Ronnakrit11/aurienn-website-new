@@ -19,7 +19,7 @@ const Pricing = () => {
                             Find the right plan that suits <br className="hidden lg:block" /> <span className="font-subheading italic">your needs</span>
                         </h2>
                         <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6 font-thai">
-                            Transform your marketing with AI-powered automation. Create campaigns faster, generate better content, and make smarter decisions in minutes.
+                            ระบบซื้อขายทองเเละการออมทอมเเบบเรียลไทม์ สร้างโอกาสการเติบโตของร้านทองของคุณ, เน้นความปลอดภัย, สะดวกสบายให้เเก่่ลูกค้าที่จะออมทอง.
                         </p>
                     </div>
                 </Container>

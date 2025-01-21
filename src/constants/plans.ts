@@ -14,7 +14,7 @@ export const PLANS: PLAN[] = [
     {
         id: "standard",
         title: "Standard",
-        desc: "Perfect for solopreneurs and small business looking for let customer  buy sell gold in your website ",
+        desc: "เหมาะสำหรับธุรกิจร้านทองขนาดเล็ก ที่ต้องการเริ่มการซื้อขายทอง ออมทองออนไลน์   ",
         monthlyPrice: 29,
         annuallyPrice: 59000,
         buttonText: "Contact",
@@ -34,7 +34,7 @@ export const PLANS: PLAN[] = [
     {
         id: "mastermind",
         title: "Mastermind",
-        desc: "Ideal for growing businesses and agencies who need advanced Functional and full service for your business.",
+        desc: "เหมาะสำหรับร้านทองขนาดกลางขึ้นไป พร้อมหน้าเว็บไซต์ร้านทอง ฟังก์ชั่นครบ สร้างความน่าเชื่อถือเเละความไว้วางใจให้กับลูกค้า",
         monthlyPrice: 79,
         annuallyPrice: 99000,
         badge: "Most Popular",
