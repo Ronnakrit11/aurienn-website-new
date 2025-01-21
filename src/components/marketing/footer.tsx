@@ -23,6 +23,20 @@ const Footer = () => {
                         <p className="text-muted-foreground mt-4 text-sm text-start">
                             Solution For Your Business
                         </p>
+                        <div className="mt-4 flex flex-col gap-1">
+                            <p className="text-sm text-muted-foreground whitespace-nowrap">
+                                บริษัท เอ็กซ์เพิร์ท เอท โซลูชั่น จำกัด
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                                EXPERT 8 SOLUTION CO., LTD.
+                            </p>
+                            <p className="text-sm text-muted-foreground mt-2">
+                                สำนักงานใหญ่ : 170/51 ถนนอ้อมค่าย ตำบลท่าซัก อำเภอเมือง จังหวัดนครศรีธรรมราช
+                            </p>
+                            <p className="text-sm text-muted-foreground mt-2 whitespace-nowrap">
+                                Email : aurienn@expert8-solution.com
+                            </p>
+                        </div>
                     </div>
                 </Container>
 
