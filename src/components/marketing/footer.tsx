@@ -106,7 +106,7 @@ const Footer = () => {
                             </h3>
                             <ul className="mt-4 text-sm text-muted-foreground space-y-4">
                                 <li className="mt-2">
-                                    <Link href="#" className="link hover:text-foreground transition-all duration-300">
+                                    <Link href="https://www.aurienn.com/blog" className="link hover:text-foreground transition-all duration-300">
                                         Blog
                                     </Link>
                                 </li>
