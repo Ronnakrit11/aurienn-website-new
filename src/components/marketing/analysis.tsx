@@ -66,7 +66,7 @@ const Analysis = () => {
                                         </div>
                                         {[
                                             { name: "GoldSpot", status: "Sell", reach: "45K", roi: "+32%" },
-                                            { name: "Gold 99.9%", status: "Buy", reach: "28K", roi: "+18%" },
+                                            { name: "Gold 99.9%", status: "Sell", reach: "28K", roi: "+18%" },
                                             { name: "Gold 96.5%", status: "Sell", reach: "62K", roi: "+45%" },
                                         ].map((campaign) => (
                                             <div key={campaign.name} className="grid grid-cols-4 text-sm py-2 border-t border-border/50">
