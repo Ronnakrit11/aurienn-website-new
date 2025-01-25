@@ -8,32 +8,32 @@ import {
 
 export const FEATURES = [
     {
-        title: "Enhance User Experience",
-        description: "Efficiently manage user data and interactions with advanced AI tools",
+        title: "ความปลอดภัยระบบออมทอง",
+        description: "ระบบออมทองของเรามีฟังก์ชั่นการป้องกันเเบบยืดหยุ่น ด้วยระบบ 2FA",
         icon: WandSparklesIcon,
         image: "/images/feature-two.svg",
     },
     {
-        title: "Analytic Price Chart",
-        description: "ดูกราฟได้เเบบเรียลไทม์ด้วย Indicator ครบครัน",
+        title: "อัพเดทราคาทองเเบบเรียลไทม์",
+        description: "ระบบออมทอง ซื้อขายทองสามารถดูกราฟได้เเบบเรียลไทม์ด้วย Indicator ครบครัน",
         icon: ChartColumnBigIcon,
         image: "/images/feature-one.svg",
     },
     {
-        title: "Price Management",
-        description: "ตั้งราคา Bid Offer ได้ทุกสินค้า",
+        title: "จัดการราคาทอง",
+        description: "ระบบออมทองสามารถตั้งราคา Bid Offer ได้ทุกสินค้า",
         icon: DatabaseIcon,
         image: "/images/feature-three.svg",
     },
     {
-        title: "Real-Time Analytics",
-        description: "Track and analyze your marketing performance in real-time",
+        title: "รู้รายละเอียดต้นทุนรวม ต้นทุนเฉลี่ย เเละอื่นๆได้ครบ",
+        description: "ระบบออมทอง ซื้อขายทองของเรา สามารถดูตัวเลขต้นทุนเฉลี่ย ต้นทุนรวม เเละตัวเลขอื่นๆได้อย่างละเอียด",
         icon: TrendingUpIcon,
         image: "/images/feature-four.svg",
     },
     {
-        title: "Realtimes Transection",
-        description: "อัพเดททุกการซื้อขายเเบบเรียลไทม์",
+        title: "รู้ทุก Transection",
+        description: "ระบบออมทองของเรา track ทุก การซื้อขายทอง การออมทอง",
         icon: ZapIcon,
         image: "/images/feature-five.svg",
     }

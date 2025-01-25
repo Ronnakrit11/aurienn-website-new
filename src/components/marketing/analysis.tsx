@@ -9,10 +9,10 @@ const Analysis = () => {
             <Container>
                 <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug">
-                        Realtimes Pricing   <br /><span className="font-subheading italic">Update</span>
+                        รู้ทุกการเคลื่อนไหวราคาทอง  <br /><span className="font-subheading italic">ทุกวินาที</span>
                     </h2>
                     <p className="text-base md:text-lg text-accent-foreground/80 mt-4">
-                        Gain detailed insights into your marketing performance and campaign metrics with our advanced analytics tools.
+                        ให้ลูกค้าของคุณไม่พลาดทุกการเคลื่อนไหวราคา ตอบโจทย์ลูกค้ายุคใหม่ ซื้อขายทอง ออมทอง ได้ทุกที่ ทุกเวลา.
                     </p>
                 </div>
             </Container>
@@ -33,7 +33,7 @@ const Analysis = () => {
                                     Transections Insights
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Track your Transections performance with data-driven insights.
+                                    ติดตามทุกการเคลื่อนไหวของพอร์ตได้เเบบเรียลไทม์.
                                 </p>
 
                                 <div className="space-y-4">

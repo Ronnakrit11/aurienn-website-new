@@ -16,10 +16,10 @@ const Pricing = () => {
                 <Container>
                     <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-                            Find the right plan that suits <br className="hidden lg:block" /> <span className="font-subheading italic">your needs</span>
+                           เเพ็คเกจระบบออมทอง ซื้อขายทอง <br className="hidden lg:block" /> <span className="font-subheading italic">ออนไลน์</span>
                         </h2>
                         <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6 font-thai">
-                            ระบบซื้อขายทองเเละการออมทอมเเบบเรียลไทม์ สร้างโอกาสการเติบโตของร้านทองของคุณ, เน้นความปลอดภัย, สะดวกสบายให้เเก่่ลูกค้าที่จะออมทอง.
+                            ระบบซื้อขายทองเเละการออมทองเเบบเรียลไทม์ สร้างโอกาสการเติบโตของร้านทองของคุณ, เน้นความปลอดภัย, สะดวกสบายให้เเก่ลูกค้าที่จะออมทอง.
                         </p>
                     </div>
                 </Container>
