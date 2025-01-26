@@ -66,7 +66,10 @@ const Hero = () => {
                     </Container>
                     <Container delay={0.2}>
                         <p className="max-w-xl mx-auto mt-2 text-base lg:text-lg text-center text-muted-foreground font-thai">
-                            เปลี่ยนการซื้อขายทอง ออมทองในกระดาษให้เป็นระบบอัตโนมัติ 24 ชม.
+                        เปลี่ยนการออมทองและซื้อขายทองลูกค้าของคุณเเบบ 24 ชม.
+
+ใช้งานง่าย ปลอดภัย ครบครัน ตอบโจทย์ยุคดิจิทัล!
+
                         </p>
                     </Container>
                     <Container delay={0.25} className="z-20">
