@@ -9,7 +9,6 @@ import { OrbitingCircles } from "../ui/orbiting-circles";
 const Hero = () => {
     return (
         <div className="relative flex flex-col items-center justify-center w-full py-20">
-
             <div className="absolute flex lg:hidden size-40 rounded-full bg-blue-500 blur-[10rem] top-0 left-1/2 -translate-x-1/2 -z-10"></div>
 
             <div className="flex flex-col items-center justify-center gap-y-8 relative">
@@ -51,32 +50,29 @@ const Hero = () => {
                                 <span className="px-2 py-[0.5px] h-[18px] tracking-wide flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 to-blue-600 text-[9px] font-medium mr-2 text-white">
                                     NEW
                                 </span>
-                                Explore the Solution
+                                ระบบออมทองออนไลน์
                             </span>
                         </button>
                     </Container>
                     <Container delay={0.15}>
-                        <h1 className="text-4xl md:text-4xl lg:text-7xl font-bold text-center !leading-tight max-w-4xl mx-auto">
-                            Transform Your {" "}
-                            <span className="">
-                                GoldStore {" "}
+                        <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold text-center !leading-tight max-w-4xl mx-auto font-prompt">
+                            ระบบออมทองออนไลน์ <br />
+                            <span className="text-blue-500">
+                                ที่ดีที่สุด
                             </span>
-                            With Aurienn
+                            {" "}สำหรับร้านทอง
                         </h1>
                     </Container>
                     <Container delay={0.2}>
                         <p className="max-w-xl mx-auto mt-2 text-base lg:text-lg text-center text-muted-foreground font-thai">
-                        เปลี่ยนการออมทองและซื้อขายทองลูกค้าของคุณเเบบ 24 ชม.
-
-ใช้งานง่าย ปลอดภัย ครบครัน ตอบโจทย์ยุคดิจิทัล!
-
+                            เปลี่ยนการซื้อขายทอง ออมทองในกระดาษให้เป็นระบบอัตโนมัติ 24 ชม. ด้วยระบบออมทองออนไลน์ที่ปลอดภัยและใช้งานง่าย
                         </p>
                     </Container>
                     <Container delay={0.25} className="z-20">
                         <div className="flex items-center justify-center mt-6 gap-x-4">
-                            <Link href="https://lin.ee/EO0xuyG" className="flex items-center gap-2 group">
+                            <Link href="https://lin.ee/EO0xuyG" className="flex items-center gap-2 group text-black">
                                 <Button size="lg">
-                                    See Demo
+                                    นัดเดโม่ระบบออมทอง
                                     <ArrowRightIcon className="size-4 group-hover:translate-x-1 transition-all duration-300" />
                                 </Button>
                             </Link>
@@ -90,17 +86,16 @@ const Hero = () => {
                             <div className="rounded-lg lg:rounded-[22px] border border-border bg-background">
                                 <Image
                                     src="/images/dashboard_Aurienn.png"
-                                    alt="dashboard"
+                                    alt="ระบบออมทองออนไลน์ - หน้าแดชบอร์ด"
                                     width={1920}
                                     height={1080}
                                     className="rounded-lg lg:rounded-[20px]"
+                                    priority
                                 />
                             </div>
-
                         </div>
                         <div className="bg-gradient-to-t from-background to-transparent absolute bottom-0 inset-x-0 w-full h-1/2"></div>
                     </Container>
-
                 </div>
             </div>
         </div>

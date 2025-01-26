@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Wrapper from "@/components/global/wrapper";
 import Analysis from "@/components/marketing/analysis";
 import Blog from "@/components/marketing/blog";
@@ -8,6 +9,23 @@ import Hero from "@/components/marketing/hero";
 import Integration from "@/components/marketing/integration";
 import LanguageSupport from "@/components/marketing/lang-support";
 import Pricing from "@/components/marketing/pricing";
+
+export const metadata: Metadata = {
+    title: "ระบบออมทอง | ระบบออมทองออนไลน์ที่ดีที่สุดสำหรับร้านทอง",
+    description: "บริการระบบออมทองออนไลน์ครบวงจร รองรับการซื้อขายทอง ออมทอง และบริหารจัดการร้านทองสมัยใหม่ ด้วยเทคโนโลยีล่าสุด ปลอดภัย ใช้งานง่าย ตลอด 24 ชั่วโมง",
+    keywords: [
+        "ระบบออมทอง",
+        "ออมทอง",
+        "ออมทองออนไลน์",
+        "ระบบออมทองออนไลน์",
+        "โปรแกรมออมทอง",
+        "ระบบร้านทอง",
+        "ซื้อขายทองออนไลน์",
+        "ระบบจัดการร้านทอง",
+        "แอพออมทอง",
+        "ออมทองรายเดือน"
+    ],
+};
 
 const HomePage = () => {
     return (
@@ -25,4 +43,4 @@ const HomePage = () => {
     )
 };
 
-export default HomePage
+export default HomePage;
