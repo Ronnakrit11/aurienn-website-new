@@ -10,11 +10,11 @@ const Features = () => {
             <Container>
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium !leading-snug">
-                        <span className="font-thai">ให้การซื้อขายทอง ออมทอง</span> <br /> 
+                        <span className="font-thai">ให้การซื้อขายทองเเละออมทอง</span> <br /> 
                         <span className="font-thai">เป็น</span> <span className="font-subheading italic">เรื่องง่าย</span>
                     </h2>
                     <p className="font-thai text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        ฟังก์ชั่นการใช้งานครบครัน. ตอบโจทย์ลูกค้ายุคดิจิทัล, สร้างความน่าเชื่อถือให้ลูกค้า, ปลอดภัยทุกธุรกรรม.
+                    ตอบโจทย์ยุคดิจิทัล ด้วยฟังก์ชันครบ ใช้งานง่าย ปลอดภัยทุกธุรกรรม สร้างความมั่นใจให้ทุกขั้นตอนของการออมทองและซื้อขายทอง!
                     </p>
                 </div>
             </Container>
