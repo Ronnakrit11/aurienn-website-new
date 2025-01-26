@@ -20,7 +20,7 @@ const Analysis = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative w-full">
                 <Container delay={0.2}>
-                <div className="rounded-2xl bg-background/40 relative border border-border/50">
+                    <div className="rounded-2xl bg-background/40 relative border border-border/50">
                         <MagicCard
                             gradientFrom="#38bdf8"
                             gradientTo="#3b82f6"
@@ -119,7 +119,6 @@ const Analysis = () => {
                                         </div>
                                     </div>
 
-                                    {/* Audience Table */}
                                     <div className="space-y-2">
                                         <div className="grid grid-cols-4 text-sm text-muted-foreground py-2">
                                             <div>Assets</div>
@@ -128,9 +127,9 @@ const Analysis = () => {
                                             <div>Growth Rate</div>
                                         </div>
                                         {[
-                                       { channel: "GoldSpot", users: "10", sessions: "45K", rate: "3.2%" },
-                                       { channel: "Gold 99.9%", users: "5 BathGold", sessions: "36K", rate: "4.5%" },
-                                       { channel: "Gold 96.5%", users: "5 BathGold", sessions: "22K", rate: "5.1%" },
+                                            { channel: "GoldSpot", users: "10", sessions: "45K", rate: "3.2%" },
+                                            { channel: "Gold 99.9%", users: "5 BathGold", sessions: "36K", rate: "4.5%" },
+                                            { channel: "Gold 96.5%", users: "5 BathGold", sessions: "22K", rate: "5.1%" },
                                         ].map((metric) => (
                                             <div key={metric.channel} className="grid grid-cols-4 text-sm py-2 border-t border-border/50">
                                                 <div>{metric.channel}</div>
@@ -222,24 +221,25 @@ const Analysis = () => {
                         }
                     ].map((section, index) => (
                         <Container key={section.title} delay={0.1 * index}>
-                            <div className="rounded-xl bg-gradient-to-b from-[#0A0A0B] to-[#0A0A0B]/95 relative border border-white/[0.08] p-6 h-full shadow-xl overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent rounded-xl"></div>
+                            <div className="rounded-xl bg-gradient-to-b from-[#0A0A0B] to-[#0A0A0B]/95 relative border border-white/[0.08] p-6 h-full shadow-xl overflow-hidden group hover:border-blue-500/50 transition-all duration-300">
+                                <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute bottom-0 right-0 bg-blue-500 w-1/4 h-1/4 blur-[8rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
                                 
-                                <div className="relative w-full h-40 mb-6">
+                                <div className="relative w-full h-40 mb-6 group-hover:scale-105 transition-transform duration-300">
                                     <Image
                                         src={section.image}
                                         alt={`${section.title} - ระบบออมทองออนไลน์`}
                                         fill
-                                        className="object-contain transition-transform duration-300 hover:scale-105"
+                                        className="object-contain"
                                     />
                                 </div>
                                 
                                 <div className="relative">
-                                    <h3 className="text-xl font-medium text-white/90 mb-4">{section.title}</h3>
+                                    <h3 className="text-xl font-medium text-white/90 mb-4 group-hover:text-white transition-colors duration-300">{section.title}</h3>
                                     <ul className="space-y-2">
                                         {section.features.map((feature) => (
-                                            <li key={feature} className="flex items-center gap-2 text-white/60">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-[#007AFF]"></div>
+                                            <li key={feature} className="flex items-center gap-2 text-white/60 group-hover:text-white/80 transition-colors duration-300">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-[#007AFF] group-hover:bg-blue-400 transition-colors duration-300"></div>
                                                 {feature}
                                             </li>
                                         ))}
