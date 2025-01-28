@@ -161,7 +161,7 @@ const Analysis = () => {
                     {[
                         {
                             title: "ระบบจัดการสมาชิกออมทอง",
-                            image: "/images/feature-one.svg",
+                            image: "/images/feature5.png",
                             features: [
                                 "สมัครสมาชิกออมทองออนไลน์ง่ายๆ",
                                 "ยืนยันตัวตน KYC มาตรฐานสากล",
@@ -171,10 +171,10 @@ const Analysis = () => {
                         },
                         {
                             title: "ระบบซื้อขายทองออนไลน์",
-                            image: "/images/feature-two.svg",
+                            image: "/images/feature2.png",
                             features: [
                                 "ซื้อขายทองออนไลน์ 24 ชั่วโมง",
-                                "แจ้งเตือนคำสั่งซื้อขายทองทันที",
+                                "แจ้งเตือนคำสั่งซื้อขายทองทันทีผ่าน telegrame bot",
                                 "ตรวจสอบสลิปโอนเงินอัตโนมัติ",
                                 "รายงานซื้อขายทองแบบเรียลไทม์"
                             ]
@@ -191,7 +191,7 @@ const Analysis = () => {
                         },
                         {
                             title: "ระบบจัดการราคาทองคำ",
-                            image: "/images/feature-four.svg",
+                            image: "/images/feature4.png",
                             features: [
                                 "อัพเดทราคาทองคำอัตโนมัติ",
                                 "ตั้งค่าส่วนต่างราคาทองได้",
@@ -201,7 +201,7 @@ const Analysis = () => {
                         },
                         {
                             title: "ระบบรายงานออมทอง",
-                            image: "/images/feature-five.svg",
+                            image: "/images/feature3.png",
                             features: [
                                 "รายงานยอดออมทองประจำวัน",
                                 "สรุปการออมทองรายบุคคล",
@@ -211,7 +211,7 @@ const Analysis = () => {
                         },
                         {
                             title: "ระบบความปลอดภัยออมทอง",
-                            image: "/images/feature-two.svg",
+                            image: "/images/feature6.png",
                             features: [
                                 "ระบบยืนยันตัวตน 2 ชั้น (2FA)",
                                 "เข้ารหัสข้อมูลออมทองแบบ End-to-End",
