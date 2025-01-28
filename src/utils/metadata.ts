@@ -62,21 +62,8 @@ export const generateMetadata = ({
     author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
     type = "website",
 }: MetadataProps = {}): Metadata => {
-    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://www.aurienn.com");
+    const metadataBase = new URL("https://www.aurienn.com");
     const imageUrl = "https://1qiwmugjmx.ufs.sh/f/JJLy8gppTqPnYt6unvQNAxnzvKiHT4fUXPyC8l1t9ZVQSpMr";
-
-    // Construct robots directives
-    const robotsDirectives = [
-        noIndex ? 'noindex' : 'index',
-        noFollow ? 'nofollow' : 'follow',
-        noArchive && 'noarchive',
-        noSnippet && 'nosnippet',
-        typeof maxSnippet === 'number' && `max-snippet:${maxSnippet}`,
-        maxImagePreview && `max-image-preview:${maxImagePreview}`,
-        typeof maxVideoPreview === 'number' && `max-video-preview:${maxVideoPreview}`,
-        noTranslate && 'notranslate',
-        noImageIndex && 'noimageindex'
-    ].filter(Boolean).join(', ');
 
     return {
         metadataBase,
@@ -89,13 +76,13 @@ export const generateMetadata = ({
         authors: [{ name: author }],
         creator: author,
         publisher: process.env.NEXT_PUBLIC_APP_NAME,
-        robots: robotsDirectives,
+        robots: "index, follow",
         openGraph: {
             type,
             title,
             description,
             siteName: process.env.NEXT_PUBLIC_APP_NAME,
-            url: metadataBase,
+            url: "https://www.aurienn.com",
             images: [
                 {
                     url: imageUrl,
@@ -118,7 +105,7 @@ export const generateMetadata = ({
         },
         icons,
         alternates: {
-            canonical: metadataBase.toString(),
+            canonical: "https://www.aurienn.com",
         },
     };
 };
