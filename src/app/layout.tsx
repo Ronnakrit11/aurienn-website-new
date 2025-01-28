@@ -5,10 +5,6 @@ import { base, heading, prompt, thai } from "@/constants";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = generateMetadata();
-({
-    noIndex: true,
-    noFollow: true
-});
 
 export default function RootLayout({
     children,
