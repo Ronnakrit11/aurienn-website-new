@@ -3,7 +3,7 @@ import { cn } from "@/lib";
 import { generateMetadata } from "@/utils";
 import { base, heading, prompt, thai } from "@/constants";
 import { Toaster } from "@/components/ui/sonner";
-
+import Script from 'next/script';
 export const metadata = generateMetadata();
 
 export default function RootLayout({
@@ -13,6 +13,21 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
+             <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16843057102"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16843057102');
+          `}
+        </Script>
+      </head>
             <body
                 className={cn(
                     "min-h-screen bg-background text-foreground antialiased overflow-x-hidden !scrollbar-hide",
