@@ -25,6 +25,10 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-16843057102');
+            gtag('event', 'conversion', {
+      'send_to': 'AW-16843057102/raGHCOefsZYaEM7Pst8-',
+      'value': 1.0,
+      'currency': 'THB'
           `}
         </Script>
       </head>
